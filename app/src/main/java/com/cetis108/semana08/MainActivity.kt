@@ -16,11 +16,19 @@ class MainActivity : AppCompatActivity() {
         autor.Apellido = "Aragón C."
         autor.Nacionalidad = "Mexicana"
 
+        val autor2 = Autor().apply {
+            Id = 2
+            Nombre = "Erick"
+            Apellido = "Castro"
+            Nacionalidad = "Mexicana"
+        }
+
         val libro = Libro().apply {
             Id = 1
             Titulo = "Kotlin para Android"
             Edicion = 2021
             Autores.add(autor)
+            Autores.add(autor2)
             Precio = 899.99
             Editorial = "DGETI"
         }

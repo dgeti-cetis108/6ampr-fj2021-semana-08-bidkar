@@ -7,4 +7,9 @@ class Autor: Serializable {
     var Nombre: String? = null
     var Apellido: String? = null
     var Nacionalidad: String? = null
+
+    fun nombreCompleto(): String {
+        // string template
+        return "$Nombre $Apellido"
+    }
 }
