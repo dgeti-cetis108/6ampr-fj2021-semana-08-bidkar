@@ -3,6 +3,7 @@ package com.cetis108.semana08
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.cetis108.semana08.databinding.ActivityLibroBinding
 
 class LibroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,12 +11,14 @@ class LibroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_libro)
 
         val libro = intent.getSerializableExtra("libro") as Libro
-        val tv_libro_id = findViewById<TextView>(R.id.tvLibroId)
-        val tv_libro_titulo = findViewById<TextView>(R.id.tvLibroTitulo)
-        val tv_libro_edicion = findViewById<TextView>(R.id.tvLibroEdicion)
-        val tv_libro_precio = findViewById<TextView>(R.id.tvLibroPrecio)
-        val tv_libro_editorial = findViewById<TextView>(R.id.tvLibroEditorial)
-        val tv_libro_autores = findViewById<TextView>(R.id.tvLibroAutores)
+        // utilizando el View Binding
+        val binding = ActivityLibroBinding.inflate(layoutInflater)
+        val tv_libro_id = binding.tvLibroId
+        val tv_libro_titulo = binding.tvLibroTitulo
+        val tv_libro_edicion = binding.tvLibroEdicion
+        val tv_libro_precio = binding.tvLibroPrecio
+        val tv_libro_editorial = binding.tvLibroEditorial
+        val tv_libro_autores = binding.tvLibroAutores
 
         tv_libro_id.text = libro.Id.toString()
         tv_libro_titulo.text = libro.Titulo
